@@ -1,0 +1,5 @@
+make --dry-run --always-make --keep-going --print-directory
+make: Entering directory `/Users/sakshamagarwal/Downloads/Robot-Selenium-Sample-RealDevice'
+make -j test_android test_ios 
+make: Leaving directory `/Users/sakshamagarwal/Downloads/Robot-Selenium-Sample-RealDevice'
+ 
