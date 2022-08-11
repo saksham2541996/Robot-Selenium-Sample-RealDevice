@@ -1,0 +1,26 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+trigger:
+- main
+
+pool:
+  vmImage: ubuntu-latest
+
+steps:
+- script: echo Hello, world!
+  displayName: 'Run a one-line script'
+
+- task: CmdLine@2
+  displayName: Curl Example
+  inputs:
+    script: "curl --location --request POST 'https://mobile-api.lambdatest.com/framework/v1/espresso/build' --header 'Authorization: Basic c2Frc2hhbWFnYXJ3YWw6ZGlQS1B4bjlxdjU0ZlhISU93YndxU29XYkFjQXVsYmV3eGZGRXQyeVZ1b0x3Qk9CQlg=' --header 'Content-Type: application/json' --data-raw '{'app' : 'lt://APP100202361655381983888368', 'testSuite': 'lt://APP100202361655381284822319', 'device' :  ['Pixel 6-12'], 'queueTimeout': 360, 'IdleTimeout': 150, 'deviceLog': true, 'build' : 'Proverbial-Espresso'}'"
+
+
+- script: |
+    echo Add other tasks to build, test, and deploy your project.
+    echo See https://aka.ms/yaml
+  displayName: 'Run a multi-line script'
+  
